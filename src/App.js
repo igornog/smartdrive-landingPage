@@ -328,7 +328,7 @@ const HomepageLayout = () => (
               <Image avatar src={agreementsImg} />
             </p>
             <Header as="h3" style={{ fontSize: "2em" }}>
-              Gerencie suas pendências
+              Gerencie suas ocorrências
             </Header>
           </Grid.Column>
         </Grid.Row>
