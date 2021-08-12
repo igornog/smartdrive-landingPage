@@ -2,6 +2,35 @@
   text-align: center;
 }
 
+.ui.inverted.segment, .ui.primary.inverted.segment {
+  background: #EB3349;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #F45C43, #EB3349);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #F45C43, #EB3349); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+}
+
+.ui.secondary.inverted.pointing.menu {
+  border: none !important;
+}
+.watermark-bkg {
+  position: absolute !important;
+  width: 60% !important;
+  bottom: 35%;
+  right: -11%;
+  opacity: .25;
+}
+
+.hero-img {
+  border: none;
+  position: absolute !important;
+  bottom: 0;
+  left: 0;
+}
+
+.ui.text.container {
+  max-width: 1024px !important;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
