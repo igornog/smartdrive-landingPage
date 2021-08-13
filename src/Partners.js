@@ -48,7 +48,7 @@ const HomepageHeading = ({ mobile }) => (
   <Container
     text
     style={{
-      maxWidth: mobile ? "" : "1000px!important",
+      maxWidth: !mobile ? "" : "1000px!important",
     }}
   >
     <Container
@@ -59,17 +59,26 @@ const HomepageHeading = ({ mobile }) => (
       }}
     >
       <Container>
-        <Grid       style={{
-        fontSize: mobile ? "1rem" : "2rem",
-      }}
-      className="partners-grid">
+        <h1
+          style={{
+            margin: mobile ? "1rem 0 3rem" : "3rem",
+          }}
+        >
+          Parceiros SmartDrive
+        </h1>
+        <Grid
+          style={{
+            fontSize: mobile ? "1rem" : "2rem",
+          }}
+          className="partners-grid"
+        >
           <Grid.Column>
-            <Container className='Card'>Locadora X</Container>
-            <Container className='Card'>Seguradora Y</Container>
+            <Container className="Card">Locadora X</Container>
+            <Container className="Card">Seguradora Y</Container>
           </Grid.Column>
           <Grid.Column>
-            <Container className='Card'>Loja XPTO</Container>
-            <Container className='Card'>Governo do Estado de SP</Container>
+            <Container className="Card">Loja XPTO</Container>
+            <Container className="Card">Governo do Estado de SP</Container>
           </Grid.Column>
         </Grid>
       </Container>
@@ -193,7 +202,7 @@ class MobileContainer extends Component {
             <Segment
               inverted
               textAlign="center"
-              style={{ minHeight: 350, padding: "1em 0em" }}
+              style={{ minHeight: '100vh', padding: "1em 0em" }}
               vertical
             >
               <Container>
