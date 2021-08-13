@@ -48,13 +48,13 @@ const HomepageHeading = ({ mobile }) => (
       style={{
         display: mobile ? "unset" : "flex",
         alignItems: "flex-end",
-        marginTop: '15%'
+        marginTop: "15%",
       }}
     >
       <Image
         bordered
         rounded
-        className='watermark-bkg'
+        className="watermark-bkg"
         size="large"
         src={scoreImg}
         style={{
@@ -74,7 +74,7 @@ const HomepageHeading = ({ mobile }) => (
       <Container>
         <Header
           as="h1"
-          content="SmartDriver"
+          content="SmartDrive"
           inverted
           style={{
             fontSize: mobile ? "2em" : "4em",
@@ -147,7 +147,7 @@ class DesktopContainer extends Component {
               secondary={!fixed}
               size="large"
             >
-              <Container             style={{ zIndex: "999" }}>
+              <Container style={{ zIndex: "999" }}>
                 <Menu.Item as="a" active>
                   Home
                 </Menu.Item>
