@@ -25,7 +25,6 @@ import {
   Header,
   Icon,
   Image,
-  List,
   Menu,
   Segment,
   Sidebar,
@@ -40,10 +39,6 @@ const { MediaContextProvider, Media } = createMedia({
   },
 });
 
-/* Heads up!
- * HomepageHeading uses inline styling, however it's not the best practice. Use CSS or styled
- * components for such things.
- */
 const HomepageHeading = ({ mobile }) => (
   <Container
     text
@@ -95,17 +90,6 @@ const HomepageHeading = ({ mobile }) => (
           />
         </>
       )}
-
-      {/* <Image
-        bordered
-        rounded
-        className='hero-img'
-        size="large"
-        src={heroImg}
-        style={{
-          border: "none",
-        }}
-      /> */}
       <Container>
         <Header
           as="h1"
@@ -129,16 +113,6 @@ const HomepageHeading = ({ mobile }) => (
             marginTop: "0",
           }}
         />
-        {/* <Header
-          as="h3"
-          content="IA dedicada para um trânsito mais inteligente."
-          inverted
-          style={{
-            fontSize: mobile ? "1.5em" : "1.7em",
-            fontWeight: "normal",
-            marginTop: mobile ? "0.5em" : "1.5em",
-          }}
-        /> */}
         <Header
           as="h2"
           content="Ganhe descontos através do seu comportamento no trânsito."
@@ -314,10 +288,6 @@ MobileContainer.propTypes = {
 };
 
 const ResponsiveContainer = ({ children }) => (
-  /* Heads up!
-   * For large applications it may not be best option to put all page into these containers at
-   * they will be rendered twice for SSR.
-   */
   <MediaContextProvider>
     <DesktopContainer>{children}</DesktopContainer>
     <MobileContainer>{children}</MobileContainer>
@@ -330,43 +300,6 @@ ResponsiveContainer.propTypes = {
 
 const HomepageLayout = (mobile) => (
   <ResponsiveContainer>
-    {/* <Segment style={{ padding: "8em 0em" }} vertical>
-      <Grid container stackable verticalAlign="middle">
-        <Grid.Row>
-          <Grid.Column width={8}>
-            <Header as="h3" style={{ fontSize: "2em" }}>
-              We Help Companies and Companions
-            </Header>
-            <p style={{ fontSize: "1.33em" }}>
-              We can give your company superpowers to do things that they never
-              thought possible. Let us delight your customers and empower your
-              needs... through pure data analytics.
-            </p>
-            <Header as="h3" style={{ fontSize: "2em" }}>
-              We Make Bananas That Can Dance
-            </Header>
-            <p style={{ fontSize: "1.33em" }}>
-              Yes that's right, you thought it was the stuff of dreams, but even
-              bananas can be bioengineered.
-            </p>
-          </Grid.Column>
-          <Grid.Column floated="right" width={6}>
-            <Image
-              bordered
-              rounded
-              size="large"
-              src="/images/wireframe/white-image.png"
-            />
-          </Grid.Column>
-        </Grid.Row>
-        <Grid.Row>
-          <Grid.Column textAlign="center">
-            <Button size="huge">Check Them Out</Button>
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-    </Segment> */}
-
     <Segment style={{ padding: "0em" }} vertical>
       <Grid celled="internally" columns="equal" stackable>
         <Grid.Row textAlign="center">
@@ -400,19 +333,6 @@ const HomepageLayout = (mobile) => (
 
     <Segment style={{ padding: "4em 0em 8em" }} vertical>
       <Container text>
-        {/* <Header as="h3" style={{ fontSize: "2em" }}>
-          Breaking The Grid, Grabs Your Attention
-        </Header>
-        <p style={{ fontSize: "1.33em" }}>
-          Instead of focusing on content creation and hard work, we have learned
-          how to master the art of doing nothing by providing massive amounts of
-          whitespace and generic content that can seem massive, monolithic and
-          worth your attention.
-        </p>
-        <Button as="a" size="large">
-          Read More
-        </Button> */}
-
         <Divider
           as="h4"
           className="header"
@@ -459,22 +379,8 @@ const HomepageLayout = (mobile) => (
       </Container>
     </Segment>
 
-
-    <Segment style={{ padding: "4em 0em 8em" }} className='company' vertical>
+    <Segment style={{ padding: "4em 0em 8em" }} className="company" vertical>
       <Container text>
-        {/* <Header as="h3" style={{ fontSize: "2em" }}>
-          Breaking The Grid, Grabs Your Attention
-        </Header>
-        <p style={{ fontSize: "1.33em" }}>
-          Instead of focusing on content creation and hard work, we have learned
-          how to master the art of doing nothing by providing massive amounts of
-          whitespace and generic content that can seem massive, monolithic and
-          worth your attention.
-        </p>
-        <Button as="a" size="large">
-          Read More
-        </Button> */}
-
         <Divider
           as="h4"
           className="header"
@@ -490,16 +396,32 @@ const HomepageLayout = (mobile) => (
               <p style={{ fontSize: "6em" }}>
                 <Image avatar src={boletoImg} />
               </p>
-              <Header as="h3" style={{ fontSize: "1.5em", fontWeight: "400", textAlign: 'center' }}>
-                Use o SmartDrive como ferramenta para complementar o cálculo de risco.  
+              <Header
+                as="h3"
+                style={{
+                  fontSize: "1.5em",
+                  fontWeight: "400",
+                  textAlign: "center",
+                }}
+              >
+                Use o SmartDrive como ferramenta para complementar o cálculo de
+                risco.
               </Header>
             </Grid.Column>
             <Grid.Column style={{ paddingBottom: "5em", paddingTop: "5em" }}>
               <p style={{ fontSize: "6em" }}>
                 <Image style={{ width: "100%" }} avatar src={heroImg} />
               </p>
-              <Header as="h3" style={{ fontSize: "1.5em", fontWeight: "400", textAlign: 'center' }}>
-                Monitore a sua frota por aplicativo, de maneira prática e em tempo real.
+              <Header
+                as="h3"
+                style={{
+                  fontSize: "1.5em",
+                  fontWeight: "400",
+                  textAlign: "center",
+                }}
+              >
+                Monitore a sua frota por aplicativo, de maneira prática e em
+                tempo real.
               </Header>
             </Grid.Column>
           </Grid.Row>
@@ -511,24 +433,6 @@ const HomepageLayout = (mobile) => (
       <Container>
         <Grid divided inverted stackable>
           <Grid.Row>
-            {/* <Grid.Column width={3}>
-              <Header inverted as='h4' content='About' />
-              <List link inverted>
-                <List.Item as='a'>Sitemap</List.Item>
-                <List.Item as='a'>Contact Us</List.Item>
-                <List.Item as='a'>Religious Ceremonies</List.Item>
-                <List.Item as='a'>Gazebo Plans</List.Item>
-              </List>
-            </Grid.Column>
-            <Grid.Column width={3}> */}
-            {/* <Header inverted as='h4' content='Services' />
-              <List link inverted>
-                <List.Item as='a'>Banana Pre-Order</List.Item>
-                <List.Item as='a'>DNA FAQ</List.Item>
-                <List.Item as='a'>How To Access</List.Item>
-                <List.Item as='a'>Favorite X-Men</List.Item>
-              </List>
-            </Grid.Column> */}
             <Grid.Column width={7}>
               <Header as="h4" inverted>
                 SmartDrive
