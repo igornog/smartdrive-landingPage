@@ -386,7 +386,7 @@ const HomepageLayout = () => (
             </Grid.Column> */}
             <Grid.Column width={7}>
               <Header as="h4" inverted>
-                Smart Driver
+                SmartDrive
               </Header>
               <p>IA dedicada para um trânsito mais inteligente.</p>
             </Grid.Column>
