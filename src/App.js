@@ -94,9 +94,19 @@ const HomepageHeading = ({ mobile }) => (
             marginTop: "0",
           }}
         />
+        {/* <Header
+          as="h3"
+          content="IA dedicada para um trânsito mais inteligente."
+          inverted
+          style={{
+            fontSize: mobile ? "1.5em" : "1.7em",
+            fontWeight: "normal",
+            marginTop: mobile ? "0.5em" : "1.5em",
+          }}
+        /> */}
         <Header
           as="h2"
-          content="IA dedicada para um trânsito mais inteligente."
+          content="Ganhe descontos através do seu comportamento no trânsito."
           inverted
           style={{
             fontSize: mobile ? "1.5em" : "1.7em",
