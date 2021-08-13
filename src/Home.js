@@ -149,6 +149,16 @@ const HomepageHeading = ({ mobile }) => (
             marginTop: mobile ? "0.5em" : "1.5em",
           }}
         />
+        <Header
+          as="h2"
+          content="IA dedicada para um trânsito mais inteligente."
+          inverted
+          style={{
+            fontSize: mobile ? ".7em" : "1em",
+            fontWeight: "normal",
+            marginTop: "0",
+          }}
+        />
       </Container>
     </Container>
   </Container>
