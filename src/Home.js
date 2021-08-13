@@ -14,6 +14,7 @@ import carImg from "./images/car.png";
 import cadastroImg from "./images/cadastro.svg";
 import descontoImg from "./images/desconto.png";
 import scoreSmImg from "./images/score-sm.svg";
+import boletoImg from "./images/boleto.svg";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import {
@@ -441,6 +442,54 @@ const HomepageLayout = (mobile) => (
               <Header as="h3" style={{ fontSize: "1.5em", fontWeight: "400" }}>
                 Com o seu score você poderá acumular pontos e ganhar descontos
                 em seguradoras, locadoras e até para pagar o seu IPVA.
+              </Header>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+      </Container>
+    </Segment>
+
+
+    <Segment style={{ padding: "4em 0em 8em" }} className='company' vertical>
+      <Container text>
+        {/* <Header as="h3" style={{ fontSize: "2em" }}>
+          Breaking The Grid, Grabs Your Attention
+        </Header>
+        <p style={{ fontSize: "1.33em" }}>
+          Instead of focusing on content creation and hard work, we have learned
+          how to master the art of doing nothing by providing massive amounts of
+          whitespace and generic content that can seem massive, monolithic and
+          worth your attention.
+        </p>
+        <Button as="a" size="large">
+          Read More
+        </Button> */}
+
+        <Divider
+          as="h4"
+          className="header"
+          horizontal
+          style={{ margin: "3em 0em", textTransform: "uppercase" }}
+        >
+          <a href="#">Solução para empresas</a>
+        </Divider>
+
+        <Grid celled="internally" columns="equal" stackable>
+          <Grid.Row textAlign="center">
+            <Grid.Column style={{ paddingBottom: "5em", paddingTop: "5em" }}>
+              <p style={{ fontSize: "6em" }}>
+                <Image avatar src={boletoImg} />
+              </p>
+              <Header as="h3" style={{ fontSize: "1.5em", fontWeight: "400", textAlign: 'center' }}>
+                Use o SmartDrive como ferramenta para complementar o cálculo de risco.  
+              </Header>
+            </Grid.Column>
+            <Grid.Column style={{ paddingBottom: "5em", paddingTop: "5em" }}>
+              <p style={{ fontSize: "6em" }}>
+                <Image style={{ width: "100%" }} avatar src={heroImg} />
+              </p>
+              <Header as="h3" style={{ fontSize: "1.5em", fontWeight: "400", textAlign: 'center' }}>
+                Monitore a sua frota por aplicativo, de maneira prática e em tempo real.
               </Header>
             </Grid.Column>
           </Grid.Row>

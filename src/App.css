@@ -95,3 +95,7 @@ h3 {
     transform: rotate(360deg);
   }
 }
+
+.company h3 {
+  text-align: center !important;
+}
