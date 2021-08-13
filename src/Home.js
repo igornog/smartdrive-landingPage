@@ -2,12 +2,18 @@
 /* eslint-disable react/no-multi-comp */
 
 import { createMedia } from "@artsy/fresnel";
+import { Link } from "react-router-dom";
 import "./App.css";
 import heroImg from "./images/turbo-hero.svg";
 import scoreImg from "./images/score.svg";
+import scoreColorImg from "./images/scorecolor.svg";
 import agreementsImg from "./images/agreements.svg";
 import offersImg from "./images/offers.svg";
 import securityImg from "./images/security.svg";
+import carImg from "./images/car.png";
+import cadastroImg from "./images/cadastro.svg";
+import descontoImg from "./images/desconto.png";
+import scoreSmImg from "./images/score-sm.svg";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import {
@@ -51,16 +57,44 @@ const HomepageHeading = ({ mobile }) => (
         marginTop: "15%",
       }}
     >
-      <Image
-        bordered
-        rounded
-        className="watermark-bkg"
-        size="large"
-        src={scoreImg}
-        style={{
-          border: "none",
-        }}
-      />
+      {mobile ? (
+        ""
+      ) : (
+        <>
+          {" "}
+          <Image
+            bordered
+            rounded
+            className="watermark-bkg"
+            size="large"
+            src={scoreImg}
+            style={{
+              border: "none",
+            }}
+          />
+          <Image
+            bordered
+            className="score-bkg"
+            rounded
+            size="large"
+            src={scoreColorImg}
+            style={{
+              border: "none",
+            }}
+          />
+          <Image
+            bordered
+            className="car-bkg"
+            rounded
+            size="large"
+            src={carImg}
+            style={{
+              border: "none",
+            }}
+          />
+        </>
+      )}
+
       {/* <Image
         bordered
         rounded
@@ -158,11 +192,22 @@ class DesktopContainer extends Component {
               size="large"
             >
               <Container style={{ zIndex: "999" }}>
-                <Menu.Item as="a" active>
-                  Home
-                </Menu.Item>
-                <Menu.Item as="a">Parceiros</Menu.Item>
-                <Menu.Item as="a">Sobre nós</Menu.Item>
+                <Link to="/">
+                  {" "}
+                  <Menu.Item as="a" active>
+                    Home
+                  </Menu.Item>
+                </Link>
+                <Link to="/parceiros">
+                  {" "}
+                  <Menu.Item as="a">Parceiros</Menu.Item>
+                </Link>
+
+                <Link to="/sobre-nos">
+                  {" "}
+                  <Menu.Item as="a">Sobre nós</Menu.Item>
+                </Link>
+
                 <Menu.Item position="right">
                   <Button as="a" inverted={!fixed}>
                     Entrar
@@ -214,10 +259,18 @@ class MobileContainer extends Component {
             vertical
             visible={sidebarOpened}
           >
-            <Menu.Item as="a">Entrar</Menu.Item>
-            <Menu.Item as="a">Cadastre-se</Menu.Item>
-            <Menu.Item as="a">Parceiros</Menu.Item>
-            <Menu.Item as="a">Sobre-nós</Menu.Item>
+            <Link to="/">
+              <Menu.Item as="a">Entrar</Menu.Item>
+            </Link>
+            <Link to="/">
+              <Menu.Item as="a">Cadastre-se</Menu.Item>
+            </Link>
+            <Link to="/parceiros">
+              <Menu.Item as="a">Parceiros</Menu.Item>
+            </Link>
+            <Link to="/sobre-nos">
+              <Menu.Item as="a">Sobre-nós</Menu.Item>
+            </Link>
           </Sidebar>
 
           <Sidebar.Pusher dimmed={sidebarOpened}>
@@ -264,7 +317,7 @@ ResponsiveContainer.propTypes = {
   children: PropTypes.node,
 };
 
-const HomepageLayout = () => (
+const HomepageLayout = (mobile) => (
   <ResponsiveContainer>
     {/* <Segment style={{ padding: "8em 0em" }} vertical>
       <Grid container stackable verticalAlign="middle">
@@ -310,7 +363,7 @@ const HomepageLayout = () => (
             <p style={{ fontSize: "3em" }}>
               <Image avatar src={offersImg} />
             </p>
-            <Header as="h3" style={{ fontSize: "2em" }}>
+            <Header as="h4" style={{ fontSize: mobile ? "1.5em" : "2em" }}>
               Ofertas exclusivas
             </Header>
           </Grid.Column>
@@ -318,7 +371,7 @@ const HomepageLayout = () => (
             <p style={{ fontSize: "3em" }}>
               <Image avatar src={securityImg} />
             </p>
-            <Header as="h3" style={{ fontSize: "2em" }}>
+            <Header as="h4" style={{ fontSize: mobile ? "1.5em" : "2em" }}>
               Confiável e seguro
             </Header>
           </Grid.Column>
@@ -326,7 +379,7 @@ const HomepageLayout = () => (
             <p style={{ fontSize: "3em" }}>
               <Image avatar src={agreementsImg} />
             </p>
-            <Header as="h3" style={{ fontSize: "2em" }}>
+            <Header as="h4" style={{ fontSize: mobile ? "1.5em" : "2em" }}>
               Gerencie suas ocorrências
             </Header>
           </Grid.Column>
@@ -334,9 +387,9 @@ const HomepageLayout = () => (
       </Grid>
     </Segment>
 
-    {/* <Segment style={{ padding: "8em 0em" }} vertical>
+    <Segment style={{ padding: "4em 0em 8em" }} vertical>
       <Container text>
-        <Header as="h3" style={{ fontSize: "2em" }}>
+        {/* <Header as="h3" style={{ fontSize: "2em" }}>
           Breaking The Grid, Grabs Your Attention
         </Header>
         <p style={{ fontSize: "1.33em" }}>
@@ -347,7 +400,7 @@ const HomepageLayout = () => (
         </p>
         <Button as="a" size="large">
           Read More
-        </Button>
+        </Button> */}
 
         <Divider
           as="h4"
@@ -355,22 +408,45 @@ const HomepageLayout = () => (
           horizontal
           style={{ margin: "3em 0em", textTransform: "uppercase" }}
         >
-          <a href="#">Case Studies</a>
+          <a href="#">Como funciona?</a>
         </Divider>
 
-        <Header as="h3" style={{ fontSize: "2em" }}>
-          Did We Tell You About Our Bananas?
-        </Header>
-        <p style={{ fontSize: "1.33em" }}>
-          Yes I know you probably disregarded the earlier boasts as non-sequitur
-          filler content, but it's really true. It took years of gene splicing
-          and combinatory DNA research, but our bananas can really dance.
-        </p>
-        <Button as="a" size="large">
-          I'm Still Quite Interested
-        </Button>
+        <Grid celled="internally" columns="equal" stackable>
+          <Grid.Row textAlign="center">
+            <Grid.Column style={{ paddingBottom: "5em", paddingTop: "5em" }}>
+              <p style={{ fontSize: "3em" }}>
+                <Image avatar src={cadastroImg} />
+              </p>
+              <Header as="h3" style={{ fontSize: "1.5em", fontWeight: "400" }}>
+                Após o cadastro no aplicativo, o SmartDrive estará pronto para
+                monitorar a sua velocidade em segundo plano.
+              </Header>
+            </Grid.Column>
+            <Grid.Column style={{ paddingBottom: "5em", paddingTop: "5em" }}>
+              <p style={{ fontSize: "3em" }}>
+                <Image avatar src={scoreSmImg} />
+              </p>
+              <Header as="h3" style={{ fontSize: "1.5em", fontWeight: "400" }}>
+                Nosso algoritmo calculará o seu score levando em consideração;{" "}
+                <strong>os limites de velocidade nas vias</strong> em conjunto
+                com o seu <strong>histórico de ocorrências</strong>. <br />
+                <br />
+                Você poderá acompanhar tudo em tempo real no seu app.
+              </Header>
+            </Grid.Column>
+            <Grid.Column style={{ paddingBottom: "5em", paddingTop: "5em" }}>
+              <p style={{ fontSize: "3em" }}>
+                <Image avatar src={descontoImg} />
+              </p>
+              <Header as="h3" style={{ fontSize: "1.5em", fontWeight: "400" }}>
+                Com o seu score você poderá acumular pontos e ganhar descontos
+                em seguradoras, locadoras e até para pagar o seu IPVA.
+              </Header>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
       </Container>
-    </Segment> */}
+    </Segment>
 
     <Segment inverted vertical style={{ padding: "5em 0em" }}>
       <Container>

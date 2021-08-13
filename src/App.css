@@ -17,14 +17,22 @@
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+h3 {
+  font-size: 1.25em !important;
+    font-weight: 400 !important;
+    text-align: left !important;
+    line-height: 38px !important;
+    margin: 0 20px !important;
+}
+
 .ui.secondary.inverted.pointing.menu {
   border: none !important;
 }
 .watermark-bkg {
   position: absolute !important;
   width: 60% !important;
-  bottom: 35%;
-  right: -11%;
+  bottom: 20%;
+  right: -8%;
   opacity: 0.25;
 }
 
@@ -35,7 +43,21 @@
   left: 0;
 }
 
-.ui.text.container {
+.car-bkg {
+  position: absolute !important;
+  width: 15% !important;
+  top: 25%;
+}
+
+.score-bkg {
+  border: none;
+  position: absolute !important;
+  width: 10% !important;
+  top: 30%;
+  left: 25%;
+}
+
+.ui.text.container, .ui.container {
   max-width: 1024px !important;
 }
 

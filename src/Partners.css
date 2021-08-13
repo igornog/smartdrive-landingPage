@@ -1,0 +1,23 @@
+.partners-grid,
+.partners-grid div {
+  width: 100% !important;
+  display: flex !important;
+  text-align: center !important;
+  justify-content: center;
+  margin: 1rem 0 !important;
+}
+
+.partners-grid div {
+  height: 25vh;
+}
+
+.ui.container.Card {
+  background-color: #fff;
+  color: black;
+  width: 50% !important;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  font-weight: bold;
+  margin: 0 10px !important;
+}
