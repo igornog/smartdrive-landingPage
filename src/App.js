@@ -151,6 +151,7 @@ class DesktopContainer extends Component {
                 <Menu.Item as="a" active>
                   Home
                 </Menu.Item>
+                <Menu.Item as="a">Parceiros</Menu.Item>
                 <Menu.Item as="a">Sobre nós</Menu.Item>
                 <Menu.Item position="right">
                   <Button as="a" inverted={!fixed}>
@@ -203,14 +204,10 @@ class MobileContainer extends Component {
             vertical
             visible={sidebarOpened}
           >
-            <Menu.Item as="a" active>
-              Home
-            </Menu.Item>
-            <Menu.Item as="a">Work</Menu.Item>
-            <Menu.Item as="a">Company</Menu.Item>
-            <Menu.Item as="a">Careers</Menu.Item>
-            <Menu.Item as="a">Log in</Menu.Item>
-            <Menu.Item as="a">Sign Up</Menu.Item>
+            <Menu.Item as="a">Entrar</Menu.Item>
+            <Menu.Item as="a">Cadastre-se</Menu.Item>
+            <Menu.Item as="a">Parceiros</Menu.Item>
+            <Menu.Item as="a">Sobre-nós</Menu.Item>
           </Sidebar>
 
           <Sidebar.Pusher dimmed={sidebarOpened}>
@@ -224,14 +221,6 @@ class MobileContainer extends Component {
                 <Menu inverted pointing secondary size="large">
                   <Menu.Item onClick={this.handleToggle}>
                     <Icon name="sidebar" />
-                  </Menu.Item>
-                  <Menu.Item position="right">
-                    <Button as="a" inverted>
-                      Entrar
-                    </Button>
-                    <Button as="a" inverted style={{ marginLeft: "0.5em" }}>
-                      Cadastre-se
-                    </Button>
                   </Menu.Item>
                 </Menu>
               </Container>
