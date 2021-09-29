@@ -16,7 +16,9 @@ import descontoImg from "./images/desconto.png";
 import scoreSmImg from "./images/score-sm.svg";
 import boletoImg from "./images/boleto.svg";
 import PropTypes from "prop-types";
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
+import { send } from "emailjs-com";
+
 import {
   Button,
   Container,
@@ -29,6 +31,8 @@ import {
   Segment,
   Sidebar,
   Visibility,
+  Form,
+  Checkbox,
 } from "semantic-ui-react";
 
 const { MediaContextProvider, Media } = createMedia({
@@ -38,6 +42,60 @@ const { MediaContextProvider, Media } = createMedia({
     computer: 1024,
   },
 });
+
+function FormExampleForm() {
+
+  const [toSend, setToSend] = useState({
+    from_name: "",
+    to_name: "SmartDriver",
+    message: "",
+    reply_to: "",
+  });
+
+  /* --- METHOD TO SEND THE MAIL --- */
+  const onSubmit = (e) => {
+    e.preventDefault();
+    send('service_2mp6txq', 'template_w19hr36', toSend, 'user_ZvIillRJQKxuAvQOOGW1A')
+      .then((response) => {
+        console.log("SUCCESS!", response.status, response.text);
+        alert('Interesse enviado com sucesso!');
+      })
+      .catch((err) => {
+        console.log("FAILED...", err);
+      });
+  };
+
+  const handleChange = (e) => {
+    setToSend({ ...toSend, [e.target.name]: e.target.value });
+  };
+
+  return (
+    <Form onSubmit={onSubmit} id="form">
+      <h1>Fique por dentro sobre o SmartDrive</h1>
+      <Form.Field>
+        <label>Nome completo</label>
+        <input
+          value={toSend.message}
+          onChange={handleChange}
+          name='message'
+          type='text'
+          placeholder="Seu nome completo"
+        />
+      </Form.Field>
+      <Form.Field>
+        <label>E-mail</label>
+        <input
+          value={toSend.from_name}
+          onChange={handleChange}
+          type='text'
+          name='from_name'
+          placeholder="Seu e-mail"
+        />
+      </Form.Field>
+      <Button type="submit">Enviar interesse</Button>
+    </Form>
+  );
+}
 
 const HomepageHeading = ({ mobile }) => (
   <Container
@@ -120,7 +178,7 @@ const HomepageHeading = ({ mobile }) => (
           style={{
             fontSize: mobile ? "1.5em" : "1.7em",
             fontWeight: "normal",
-            marginTop: mobile ? "0.5em" : "1.5em",
+            marginTop: mobile ? "0.5em" : "1em",
           }}
         />
         <Header
@@ -133,6 +191,15 @@ const HomepageHeading = ({ mobile }) => (
             marginTop: "0",
           }}
         />
+        <Button
+          href="#form"
+          style={{
+            margin: "1rem 0",
+            fontSize: "1.5rem",
+          }}
+        >
+          Quero saber mais
+        </Button>
       </Container>
     </Container>
   </Container>
@@ -427,6 +494,10 @@ const HomepageLayout = (mobile) => (
           </Grid.Row>
         </Grid>
       </Container>
+    </Segment>
+
+    <Segment vertical style={{ padding: "5em 0em" }}>
+      <Container>{FormExampleForm()}</Container>
     </Segment>
 
     <Segment inverted vertical style={{ padding: "5em 0em" }}>
