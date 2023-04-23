@@ -1,3 +1,9 @@
+# SmartDrive Landing Page
+
+
+<img width="1177" alt="Captura de Tela 2023-04-24 às 00 01 13" src="https://user-images.githubusercontent.com/29484089/233868481-7b346f11-25c2-41b2-be27-b39e44fe23d5.png">
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
